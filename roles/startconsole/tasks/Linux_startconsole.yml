@@ -4,6 +4,8 @@
     cmd: setmqweb properties -k httpHost -v "*"
     chdir: /var/mqm/web/installations/Installation1/servers/mqweb
   changed_when: true
+  become: true
+  become_user: mqm
 
 - name: Check if Web Console is Running
   ansible.builtin.command:
