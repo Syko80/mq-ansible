@@ -23,14 +23,14 @@
   when: ansible_distribution == 'RedHat' and not local_source and convention=='new'
 
 # Get the file if local source is false
-#- name: Download MQ Advanced for Developers
-#  ansible.builtin.get_url:
-#    url: "{{ downloadURL }}{{ zip_file }}"
-#    dest: /var/mq.tar.gz
-#    force: false
-#    mode: "0644"
-#  tags: download
-#  when: not local_source
+- name: Download MQ Advanced for Developers
+  ansible.builtin.get_url:
+    url: "{{ downloadURL }}{{ zip_file }}"
+    dest: /var/mq.tar.gz
+    force: false
+    mode: "0644"
+  tags: download
+  when: not local_source
 
 # Copy source to target if local source is true
 - name: Copy local MQ source to target
