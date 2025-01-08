@@ -1,7 +1,7 @@
 ---
 - name: Allow console to be accessed from anywhere
   ansible.builtin.command:
-    cmd: setmqweb properties -k httpHost -v "*"
+    cmd: su - mqm -c 'setmqweb properties -k httpHost -v "*"'
     chdir: /var/mqm/web/installations/Installation1/servers/mqweb
   changed_when: true
 
